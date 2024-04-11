@@ -8,10 +8,9 @@ This project has been created as a solution that will be integrated as a feature
 
 - [Usage](#usage)
 - [Credits](#credits)
-- [Tests](#Tests)
 
 ## Link to Website
-
+https://petecodes4u.github.io/askEros/
 
 ## Usage
 
