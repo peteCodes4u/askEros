@@ -1,4 +1,4 @@
-# <Ask Eros!>
+# Ask Eros!
 
 ## Description
 
