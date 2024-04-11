@@ -1,12 +1,78 @@
 const userFormEl = document.querySelector('#user-form');
 
+// Get the button element
+const aeButton = document.getElementById('askEros');
+const taButton = document.getElementById('tryAgain');
+const ncButton = document.getElementById('newCity');
+const cityField = document.getElementById('city');
+
+
 // submit form **To be added to appropriate region on integration with Journey-end**
 const formSubmitHandler = function (event) {
   event.preventDefault();
 
   // execute getSuggestions on user click "askEros"
   getSuggestions();
+
+
+  // Function to hide the button
+  function hideButton() {
+    aeButton.style.display = 'none'; // Hide the button
+    taButton.style.display = 'inline-block'; // show button
+    ncButton.style.display = 'inline-block'; // show button
+    cityField.style.display = 'none'; // Hide city field
+  }
+
+  setTimeout(() => {
+    console.log("Second function will be executed after 3 seconds");
+    hideButton();
+  }, 1500); // 1500 milliseconds = 1.5 seconds
+
+
 };
+
+
+ncButton.addEventListener("click", function () {
+
+  location.reload();
+
+})
+
+const displayResults = function () {
+  // Retrieve the array from localStorage
+  const erosFindsArray = JSON.parse(localStorage.getItem('erosPicks')) || [];
+
+  // Get the container where you want to append the <p> elements
+  const container = document.getElementById('erosFinds-container');
+
+  // Function to replace <p> elements
+  const replaceElements = () => {
+    // Clear existing <p> elements in the container
+    container.innerHTML = '';
+
+    // Loop through the array and create new <p> elements
+    erosFindsArray.forEach(item => {
+      // Create a new <p> element
+      const pElement = document.createElement('p');
+
+      // Set the text content of the <p> element to the current item
+      pElement.textContent = item;
+
+      // Append the <p> element to the container
+      container.appendChild(pElement);
+    });
+  };
+
+  // Initial display of results
+  replaceElements();
+
+  // Get the "tryAgain" button element
+  const tryAgainButton = document.getElementById('tryAgain');
+
+  // Add event listener to the "tryAgain" button to replace elements on click
+  tryAgainButton.addEventListener('click', replaceElements);
+};
+
 
 
 //   retrieve data from ticketmaster.com API (currently set to enter city name in field)
@@ -19,7 +85,6 @@ const getSuggestions = function () {
     method: "GET",
     redirect: "follow"
   };
-
 
   fetch(`https://app.ticketmaster.com/discovery/v2/events.json?&city=${city}&apikey=PX9R1m9GGLoYMZnyzl7zDQT2EZJyjBqX`, requestOptions)
     .then(response => response.json())
@@ -46,10 +111,7 @@ const getSuggestions = function () {
     console.log("Second function will be executed after 3 seconds");
     prepareResults();
   }, 1500); // 1500 milliseconds = 1.5 seconds
-
-
 };
-
 
 //   prepare resutls > strategy => parse each localStorage array for names and compile master list for looping and randomizing result output
 const prepareResults = function () {
@@ -85,7 +147,6 @@ const prepareResults = function () {
   // set the events data by pulling object .events from the array erosEvents data
   const attractions = attractionData._embedded.attractions;
 
-
   // Use forEach loop to pull all event names
   attractions.forEach(attraction => {
     let attractionNames = JSON.stringify(attraction.name);
@@ -93,7 +154,6 @@ const prepareResults = function () {
     // Append each event name to the erosFinds array
     erosFinds.push(attractionNames);
   });
-
 
   // erosSuggest push to erosFinds (new array composed of events/attractions/suggests)
   // set the eventDataString by pulling erosEvents in local storage
@@ -117,9 +177,7 @@ const prepareResults = function () {
   localStorage.setItem('erosFinds', JSON.stringify(erosFinds));
   randomizeErosFinds();
   displayResults();
-
-
-}
+};
 
 // randomize results and select only 3
 const randomizeErosFinds = function () {
@@ -143,30 +201,19 @@ const randomizeErosFinds = function () {
   // Store the new array back into local storage
   localStorage.setItem('erosPicks', JSON.stringify(erosPicks));
 
-}
+};
 
 // display results 
-const displayResults = function () {
-  // Retrieve the array from localStorage
-  const erosFindsArray = JSON.parse(localStorage.getItem('erosPicks')) || [];
-
-  // Get the container where you want to append the <p> elements
-  const container = document.getElementById('erosFinds-container');
-
-  // Loop through the array and create <p> elements
-  erosFindsArray.forEach(item => {
-    // Create a new <p> element
-    const pElement = document.createElement('p');
-
-    // Set the text content of the <p> element to the current item
-    pElement.textContent = item;
-
-    // Append the <p> element to the container
-    container.appendChild(pElement);
-  });
-
-}
 
 
 // event listener for submit button
 userFormEl.addEventListener('submit', formSubmitHandler);
+
+
+// Set the buttons intial  visiblity on page load
+// askEros button = show
+aeButton.style.display = 'inline-block';
+// tryAgain button = hide
+taButton.style.display = 'none';
+// newCity button = hide
+ncButton.style.display = 'none';
