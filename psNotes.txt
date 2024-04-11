@@ -1,0 +1,17 @@
+Venues
+https://platform.seatgeek.com/#recommendations
+
+ticket master
+PX9R1m9GGLoYMZnyzl7zDQT2EZJyjBqX
+https://app.ticketmaster.com/discovery/v2/events?apikey=PX9R1m9GGLoYMZnyzl7zDQT2EZJyjBqX&locale=*
+
+
+Events>>
+https://app.ticketmaster.com/discovery/v2/events.json?&city=tampa&apikey=PX9R1m9GGLoYMZnyzl7zDQT2EZJyjBqX
+
+attractions>>
+https://app.ticketmaster.com/discovery/v2/attractions.json?&keyword=tampa&apikey=PX9R1m9GGLoYMZnyzl7zDQT2EZJyjBqX
+
+suggest>>
+https://app.ticketmaster.com/discovery/v2/suggest.json?&keyword=tampa&apikey=PX9R1m9GGLoYMZnyzl7zDQT2EZJyjBqX
+
