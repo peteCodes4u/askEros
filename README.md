@@ -1,49 +1,28 @@
-# PROJECT REPO TITLE HERE
+# <Ask Eros!>
+
+## Description
+
+This project has been created as a solution that will be integrated as a feature in an alternate project (Journey's-End). This solution collects data from TicketMaster public API's and randomizes suggestions for users by retruning event information based on the city they provide in the the Ask Eros form. This solution can be utilized as a standalone feature and as to demonstrate the solution for integration into Journey's End this project has been published. The app's title hails from the greek god Eros, one of the love deities that is considered the original cupid archtype. 
 
 ## Table of Contents
 
-* [Description](#description)
-* [Languages](#languages)
-* [Features](#features)
-* [Usage](#usage)
-* [Credits](#credits)
-* [License](#license)  
+- [Usage](#usage)
+- [Credits](#credits)
+- [Tests](#Tests)
 
+## Link to Website
 
-## Description
-    INSERT PROJECT DESCRIPTION HERE MAHNNNNNNN
-## Languages
-
-* ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-* ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-* ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-
-## Features
-
-* **DEFINE FEATURES MAN:** DESCRIBE FEATURES HERE BRUH --- IT IS THE WAY BRUH
-* **DEFINE FEATURES MAN:** DESCRIBE FEATURES HERE BRUH --- IT IS THE WAY BRUH
-* **DEFINE FEATURES MAN:** DESCRIBE FEATURES HERE BRUH --- IT IS THE WAY BRUH
-* **DEFINE FEATURES MAN:** DESCRIBE FEATURES HERE BRUH --- IT IS THE WAY BRUH
-* **DEFINE FEATURES MAN.:** DESCRIBE FEATURES HERE BRUH --- IT IS THE WAY BRUH
-* **DEFINE FEATURES MAN:** DESCRIBE FEATURES HERE BRUH --- IT IS THE WAY BRUH
 
 ## Usage
 
-* EXPLAIN GENERAL DESIGN USAGE
+The intended usage of this application is to randomize event information for serendipitous date night options, or hang outs with friends.
 
-* [LIVE PROJECT LINK HERE](https://ivionsters.github.io/IVIonsters-Designs-Blog/)
+![](./assets/images/askEros-ScreenShot.png)
 
-* [REPO LINK GOES HERE](https://github.com/IVIonsters/IVIonsters-Designs-Blog)
+## Features
 
-* ![SCREENSHOTS GO HERE](./assets/refimages/lightmodemain.png)
-* ![SCRENSHOTS HERE](./assets/refimages/lightmodeblog.png)
+- Ask Eros - enter a city and click Ask Eros! to see 3 randomized events.
+- Try Again! - this button is only visible after intitally asking eros, when this button is clicked the results will be re-calculated and returned.
+- New City - this button is only visible after initally asking eros, when this button is clicked the page will reset and the user can select a new city for results.
 
-
-## Credits
-
-* [N/A](N/A)
-
-## License
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
