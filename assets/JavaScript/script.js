@@ -9,7 +9,7 @@ const cityField = document.getElementById('city');
 
 // submit form **To be added to appropriate region on integration with Journey-end**
 const formSubmitHandler = function (event) {
-  event.preventDefault();
+event.preventDefault();
 
   // execute getSuggestions on user click "askEros"
   getSuggestions();
@@ -24,16 +24,13 @@ const formSubmitHandler = function (event) {
   }
 
   setTimeout(() => {
-    console.log("Second function will be executed after 3 seconds");
     hideButton();
   }, 1500); // 1500 milliseconds = 1.5 seconds
 
 
 };
 
-
 ncButton.addEventListener("click", function () {
-
   location.reload();
 
 })
@@ -73,8 +70,6 @@ const displayResults = function () {
   tryAgainButton.addEventListener('click', replaceElements);
 };
 
-
-
 //   retrieve data from ticketmaster.com API (currently set to enter city name in field)
 const getSuggestions = function () {
 
@@ -108,7 +103,6 @@ const getSuggestions = function () {
     .catch(err => console.error(err));
 
   setTimeout(() => {
-    console.log("Second function will be executed after 3 seconds");
     prepareResults();
   }, 1500); // 1500 milliseconds = 1.5 seconds
 };
@@ -204,11 +198,8 @@ const randomizeErosFinds = function () {
 };
 
 // display results 
-
-
 // event listener for submit button
 userFormEl.addEventListener('submit', formSubmitHandler);
-
 
 // Set the buttons intial  visiblity on page load
 // askEros button = show
